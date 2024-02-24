@@ -1,0 +1,108 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+#deck-builder {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#card-list {
+    float: left;
+    width: 48%;
+    height: 450px;
+    border: 1px solid #000;
+    overflow-y: scroll;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#deck {
+    float: left;
+    width: 50%;
+}
+
+#deck-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.deck-list .card {
+    width: 25%; /* デッキリストのカードの幅を25%に設定（4列に分けるため） */
+    box-sizing: border-box;
+    margin: 0; /* デフォルトのマージンを削除 */
+    padding: 5px; /* カードの間に余白を追加 */
+}
+
+.menu-container {
+    position: relative;
+    display: inline-block;
+    }
+
+.menu-button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+
+.card {
+    cursor: pointer;
+    margin-bottom: 5px;
+    width:48%;
+    box-sizing: border-box;
+}
+
+.card:hover {
+    background-color: #eee;
+}
+
+img{
+  height:200px;
+  width:160px;
+}
+.deck-list img{
+  width: 80px;
+  height: 100px
+}
+
+/* ... 既存のコード ... */
+
+#menu-container {
+    position: relative;
+    display: inline-block;
+}
+
+#menu-button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+/* DECK.css */
+/* ... 既存のコード ... */
+
+.search-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #f9f9f9;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    z-index: 1;
+    width: 320px; /* メニューの幅を適宜調整 */
+}
+
+#search-menu label,
+#search-menu input,
+#search-menu button {
+    margin-bottom: 10px;
+}
+
+/* ... 既存のコード ... */
+
