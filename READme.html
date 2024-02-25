@@ -1,0 +1,216 @@
+#ikangetsumaker
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="DECK.css">
+    <title>如何月メーカー</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<div id="deck-builder">
+    <h1>デッキメーカー</h1>
+    
+    <div id="menu-container" class="menu-container">
+    <button id="menu-button" class="menu-button">メニュー</button>
+    <div id="search-menu" class="search-menu">
+        <label for="ability-search">スペルで検索：</label>
+        <select id="ability-search">
+            <option value="">すべてのスペル</option>
+            <option value="攻撃スペル">攻撃スペル</option>
+            <option value="回避スペル">回避スペル</option>
+            <option value="スペルなし">スペルなし</option>
+            <option value="特殊能力">特殊能力</option>
+        </select><br>
+    <label for="id-search">数値で検索：</label>
+    <select id="id-search">
+        <option value="">すべての数値</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <!-- idの選択肢を追加 -->
+        <!-- 例: <option value="1">ID 1</option> -->
+    </select><br>
+
+    <label for="effect-search">効果で検索　：</label>
+    <select id="effect-search">
+        <option value="">すべての効果</option>
+        <option value="バウンス（自分）">バウンス（自分）</option>
+        <option value="バウンス（相手）">バウンス（相手）</option>
+        <option value="ハンデス">ハンデス</option>
+        <option value="スペル封じ">スペル封じ</option>
+        <option value="弾幕攻撃封じ">弾幕攻撃封じ</option>
+        <option value="サルベージ">サルベージ（回収）</option>
+        <option value="自機札入れ替え">自機札入れ替え</option>
+        <option value="守護札を表に変更（自分）">守護札を表に変更（自分）</option>
+        <option value="守護札を表に変更（相手）">守護札を表に変更（相手）</option>
+        <option value="守護札を裏に変更（自分）">守護札を裏に変更（自分）</option>
+        <option value="守護札を裏に変更（相手）">守護札を裏に変更（相手）</option>
+        <option value="守護札を確認する">守護札を確認する</option>
+        <option value="自機、守護札移動（自分）">自機、守護札移動（自分）</option>
+        <option value="自機、守護札移動（相手）">自機、守護札移動（相手）</option>
+        <option value="配置変更不可">配置変更不可</option>
+        <option value="捨て札を表向きにする">捨て札を表向きにする</option>
+        <option value="捨て札を裏向きにする">捨て札を裏向きにする</option>
+        <option value="手札公開（自分）">手札公開（自分）</option>
+        <option value="手札公開（相手）">手札公開（相手）</option>
+        <option value="効果コピー">効果コピー</option>
+        <option value="二回攻撃">二回攻撃</option>
+        <option value="弾幕を打てるようになる">弾幕を打てるようになる</option>
+        <option value="条件、代償無視">条件、代償無視</option>
+        <option value="数値上昇">数値上昇</option>
+        <option value="数値ダウン">数値減少</option>
+        <option value="攻撃範囲拡張">攻撃範囲拡張</option>
+        <option value="相手守護札を捨て札送り">相手守護札を捨て札送り</option>
+        <option value="相手守護札を撃破">相手守護札を撃破</option>
+        <option value="場に残る">場に残る</option>
+        <option value="復活、蘇生">復活、蘇生</option>
+        <option value="手札から守護札を出す">手札から守護札を出す</option>
+        <option value="攻撃フェーズスキップ">攻撃フェーズスキップ</option>
+        <option value="特殊勝利">特殊勝利</option>
+        <!-- 他の検索条件を追加 -->
+    </select><br>
+    
+        <label for="condition-search">条件、代償で検索：</label>
+    <select id="condition-search">
+        <option value=""></option>
+        <option value="自機札限定">自機札限定</option>
+        <option value="自機札指定">自機札指定</option>
+        <option value="種族指定（一種類）">種族指定(一種類)</option>
+        <option value="種族指定（二種類以上）">種族指定（二種類以上）</option>
+        <option value="捨て札を裏向きにする">捨て札を裏向きにする</option>
+        <option value="手札を捨てる">手札を捨てる</option>
+        <option value="ターン開始時に自身が表向き">ターン開始時に自身が表向き</option>
+        <option value="守護札を捨て札に送る">守護札を捨て札に送る</option>
+        <option value="相手守護札を撃破">相手守護札を撃破</option>
+        <option value="守護札を表に変更">守護札を表に変更</option>
+        <option value="守護札を裏に変更">守護札を裏に変更</option>
+        <option value="数字指定">数値指定</option>
+        <option value="特定の札が捨て札にない">特定の札が捨て札にない</option>
+        <option value="手札枚数指定">手札枚数指定</option>
+        <option value="捨て札枚数指定">捨て札枚数指定</option>
+        <option value="範囲を指定">効果範囲を指定</option>
+        <option value="捨て札に存在">捨て札に存在</option>
+        <option value="自身の数値減少">自身の数値減少</option>
+        <option value="攻撃を受ける">攻撃を受ける</option>
+        <option value="手札公開">手札公開</option>
+        <option value="弾幕攻撃発動不可">弾幕攻撃発動不可</option>
+        <option value="相手札を撃破できない">相手札を撃破できない</option>
+        <option value="自機入れ替え後">自機入れ替え後</option>
+        <option value="撃破された場合">撃破された場合</option>
+        <option value="自機札に攻撃不可">自機札に攻撃不可</option>
+        <option value="スペル発動不可">スペル発動不可</option>
+        <option value="自身が手札公開される">自身が手札公開される</option>
+        <option value="攻撃不可付与">攻撃不可付与</option>
+        <!-- 他の検索条件を追加 -->
+    </select><br>
+    
+   <label for="race-search">種族で検索　：</label>
+    <select id="race-search">
+        <option value="">すべての種族</option>
+        <option value="悪魔">悪魔</option>
+        <option value="鬼">鬼</option>
+        <option value="玉兎">玉兎</option>
+        <option value="月の民">月の民</option>
+        <option value="神">神</option>
+        <option value="人間">人間</option>
+        <option value="仙人">仙人</option>
+        <option value="天狗">天狗</option>
+        <option value="付喪神">付喪神</option>
+        <option value="魔術師">魔術師</option>
+        <option value="人形">人形</option>
+        <option value="幽霊">幽霊</option>
+        <option value="妖怪">妖怪</option>
+        <option value="妖獣">妖獣</option>
+        <option value="妖精">妖精</option>
+        <option value="科学者">科学者</option>
+        <option value="巫女">巫女</option>
+        <option value="魔界">魔界</option>
+        <option value="蟲">蟲</option>
+        
+        <!-- 他の検索条件を追加 -->
+    </select>
+        <button id="search-button">検索</button>
+    </div>
+</div>
+
+    <div>
+        <label for="search">名前を入力　　:</label>
+        <input type="text" id="search" name="search" placeholder="ここに入力してください">
+    </div>
+
+<div>
+    <label for="packSelect">パックを選択　:</label>
+    <select id="packSelect">
+        <option value="">すべて</option>
+        <option value="紅魔郷">紅魔郷</option>
+        <option value="紅魔郷Remake">紅魔郷Remake</option>
+        <option value="妖々夢">妖々夢</option>
+        <option value="妖々夢Remake">妖々夢Remake</option>
+        <option value="萃夢想">萃夢想</option>
+        <option value="永夜抄">永夜抄</option>
+        <option value="永夜抄Remake">永夜抄Remake</option>
+        <option value="花映塚">花映塚</option>
+        <option value="風神録">風神録</option>
+        <option value="地霊殿">地霊殿</option>
+        <option value="星蓮船">星蓮船</option>
+        <option value="神霊廟">神霊廟</option>
+        <option value="ExD1">ExD1</option>
+        <option value="輝針城">輝針城</option>
+        <option value="紺珠伝">紺珠伝</option>
+        <option value="ビギナーズ">ビギナーズ</option>
+        <option value="COB">COB</option>
+        <option value="緋想天">緋想天</option>
+        <option value="天空璋">天空璋</option>
+        <option value="ExD2">ExD2</option>
+        <option value="ISC">ISC</option>
+        <option value="鬼形獣">鬼形獣</option>
+        <option value="旧作　幻想郷異伝">旧作　幻想郷異伝</option>
+        <option value="旧作　魔界の住人">旧作　魔界の住人</option>
+        <option value="黄昏の宴">黄昏の宴</option>
+        <option value="ROA">ROA</option>
+        <option value="悪魔の姉妹">悪魔の姉妹</option>
+        <option value="虹龍洞">虹龍洞</option>
+        <option value="幽夢の胡蝶">幽夢の胡蝶</option>
+        <option value="剛欲異聞">剛欲異聞</option>
+        <option value="月都万象">月都万象</option>
+        <option value="科学世紀">科学世紀</option>
+        <option value="日曜シューター">日曜シューター</option>
+        <option value="最強カルテット">最強カルテット</option>
+        <option value="IOSYS">IOSYS</option>
+        <option value="獣王園">獣王園</option>
+        <option value="混沌ヒエラルキー">混沌ヒエラルキー</option>
+        <option value="プロモカード">プロモカード</option>
+        <option value="SPプロモ">SPプロモ</option>
+        
+        <!-- 他のパックのオプションを追加する場合はここに追加 -->
+    </select>
+</div>
+
+
+    <div id="card-list" class="card-list">
+        <!-- カードリストがここに表示される -->
+    </div>
+
+    <div id="deck">
+        <h2>Your Deck</h2>
+        <ul id="deck-list" class="deck-list">
+            <!-- デッキリストがここに表示される -->
+        </ul>
+    </div>
+</div>
+
+<script src="DECK.js"></script>
+</body>
+</html>
