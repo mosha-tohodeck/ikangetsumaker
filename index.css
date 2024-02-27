@@ -25,7 +25,7 @@ header {
   color: white;
   border-radius: 10px;
   padding: 10px;
-  margin-left: 1035px;
+  margin-left: 60%;
 }
 
 .head{
@@ -92,7 +92,8 @@ section {
 /* 画像 */
 img {
   /* 横幅 */
-  width: 700px;
+  width: 40%;
+  height: 80%;
   /* 角丸 */
   border-radius: 10px;
   margin-bottom: 30px;
