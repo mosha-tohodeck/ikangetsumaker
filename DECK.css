@@ -15,6 +15,7 @@ body {
     overflow-y: scroll;
     display: flex;
     flex-wrap: wrap;
+    font-size:12px;
 }
 
 #deck {
