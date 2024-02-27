@@ -67,7 +67,11 @@ section {
 .second{
   background-color: #ffffcc;
 }
-
+.nex{
+  text-align:right;
+  font-style:oblique;
+  color: #666666;
+}
 /* h2見出し */
 .headline {
   /* 文字の色 */
