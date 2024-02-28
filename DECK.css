@@ -75,8 +75,8 @@ img{
 /* 横向きのスマホのスタイル */
 @media only screen and (max-width: 767px) and (orientation: landscape) {
     .img {
-    height:100px;
-    width:80px;
+    height:75px;
+    width:55px;
     }
 }
 .deck-list img{
