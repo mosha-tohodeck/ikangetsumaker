@@ -67,23 +67,38 @@ img{
 /* 縦向きのスマホのスタイル */
 @media only screen and (max-width: 767px) and (orientation: portrait) {
     .img {
-     height:80px;
-     width:60px;
+     height:60px;
+     width:45px;
     }
 }
 
 /* 横向きのスマホのスタイル */
 @media only screen and (max-width: 767px) and (orientation: landscape) {
     .img {
-    height:75px;
-    width:55px;
+    height:90px;
+    width:70px;
     }
 }
 .deck-list img{
   width: 80px;
   height: 100px
 }
+@media only screen and (max-width: 767px) and (orientation: portrait) {
+    .deck-list img {
+        /* 縦向きのスマホ用のスタイル */
+        width: ;
+        height: /* 任意のサイズ */;
+    }
+}
 
+/* 横向きのスマホのスタイル */
+@media only screen and (max-width: 767px) and (orientation: landscape) {
+    .deck-list img {
+        /* 横向きのスマホ用のスタイル */
+        width: /* 別の任意のサイズ */;
+        height: /* 別の任意のサイズ */;
+    }
+}
 /* ... 既存のコード ... */
 
 #menu-container {
