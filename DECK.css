@@ -67,16 +67,16 @@ img{
 /* 縦向きのスマホのスタイル */
 @media only screen and (max-width: 767px) and (orientation: portrait) {
     .img {
-     height:120px;
-     width:100px;
+     height:80px;
+     width:60px;
     }
 }
 
 /* 横向きのスマホのスタイル */
 @media only screen and (max-width: 767px) and (orientation: landscape) {
     .img {
-    height:120px;
-    width:100px;
+    height:100px;
+    width:80px;
     }
 }
 .deck-list img{
