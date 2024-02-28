@@ -80,8 +80,8 @@ img{
     }
 }
 .deck-list img{
-  width: 80px;
-  height: 100px
+  width: 110px;
+  height: 135px
 }
 @media only screen and (max-width: 767px) and (orientation: portrait) {
     .deck-list img {
@@ -95,8 +95,8 @@ img{
 @media only screen and (max-width: 767px) and (orientation: landscape) {
     .deck-list img {
         /* 横向きのスマホ用のスタイル */
-        width: 54px;
-        height: 70px;
+        width: 62px;
+        height: 85px;
     }
 }
 /* ... 既存のコード ... */
