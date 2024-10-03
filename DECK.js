@@ -587,7 +587,6 @@ document.addEventListener('DOMContentLoaded', function () {
 const deckCards = Array(12);
     function addToDeckDOM(card) {
         const deckItem = document.createElement('li');
-
         const cardImageInDeck = document.createElement('img');
         cardImageInDeck.src = card.image;
         cardImageInDeck.alt = card.title;
