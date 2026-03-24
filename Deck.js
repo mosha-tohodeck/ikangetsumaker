@@ -1047,7 +1047,7 @@ const deckCards = Array(12);
 
     document.getElementById("share-deck").addEventListener("click", () => {
         const deckNOs = Object.values(deckCards).filter(v => v);
-        const baseURL = "https://mosha-tohodeck.github.io/ikangetsumaker/DECK.html";
+        const baseURL = "https://mosha-tohodeck.github.io/ikangetsumaker/PRE.html";
         const url = baseURL + "?deck=" + deckNOs.join(",");
         navigator.clipboard.writeText(url);
         alert("デッキURLをコピーしました！");
@@ -1123,4 +1123,28 @@ const deckCards = Array(12);
         document.getElementById("load-dialog").classList.add("hidden");
     });
     //ここまで追加。
+// ikangetsumaker.js の DOMContentLoaded 内、
+// 最後の }); の直前に追記してください
+
+// テンプレートオーバーレイの開閉
+const templateToggle  = document.getElementById('template-toggle');
+const templateOverlay = document.getElementById('template-overlay');
+const templateClose   = document.getElementById('template-close');
+
+if (templateToggle && templateOverlay && templateClose) {
+    // ボタンで開く
+    templateToggle.addEventListener('click', () => {
+        templateOverlay.classList.remove('hidden');
+    });
+    // ✕ボタンで閉じる
+    templateClose.addEventListener('click', () => {
+        templateOverlay.classList.add('hidden');
+    });
+    // 背景クリックで閉じる
+    templateOverlay.addEventListener('click', (e) => {
+        if (e.target === templateOverlay) {
+            templateOverlay.classList.add('hidden');
+        }
+    });
+}
 });
