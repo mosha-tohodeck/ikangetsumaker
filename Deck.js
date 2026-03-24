@@ -14,7 +14,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const searchMenu = document.getElementById('search-menu');
     const packSelect = document.getElementById('packSelect');
 
-
     const cards = [
         { NO: 1,id: 1, title: '①ルーミア', image: '1ルーミア エラッタWIKI.jpeg', category: '《常闇の妖怪》ルーミア,《常闇の妖怪》るーみあ,そーなのかー,夜符「ナイトバード」', into: '紅魔郷', ability:'攻撃スペル', effect:'手札から守護札を出す', race:'妖怪', condition:'', wikiLink: 'https://touhouikangetsu.wiki.fc2.com/wiki/%E3%80%8E%E2%91%A0%E3%80%8A%E5%AE%B5%E9%97%87%E3%81%AE%E5%A6%96%E6%80%AA%E3%80%8B%E3%83%AB%E3%83%BC%E3%83%9F%E3%82%A2%E3%80%8F',same:[13]},
         { NO: 2, id: 2, title: '②大妖精', image: '2大妖精WIKI.jpeg', category: '《ルーネイトエルフ》大妖精,《ルーネイトエルフ》だいようせい,大ちゃん,大ようせい', into: '紅魔郷', ability:'スペルなし', effect:'', race:'妖精', condition:'', wikiLink:'https://touhouikangetsu.wiki.fc2.com/wiki/%E3%80%8E%E2%91%A1%E3%80%8A%E3%83%AB%E3%83%BC%E3%83%8D%E3%82%A4%E3%83%88%E3%82%A8%E3%83%AB%E3%83%95%E3%80%8B%E5%A4%A7%E5%A6%96%E7%B2%BE%E3%80%8F',same: [14,1001]},
