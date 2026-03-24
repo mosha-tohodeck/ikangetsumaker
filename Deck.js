@@ -1034,7 +1034,6 @@ const deckCards = Array(12);
         }
     });
     // 🔽 種族アイコンをクリックしたときの検索処理
-
     document.querySelectorAll(".race-icon").forEach(icon => {
         icon.addEventListener("click", () => {
             const race = icon.dataset.race;
