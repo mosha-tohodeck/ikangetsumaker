@@ -1,0 +1,293 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* ======== カード詳細ポップアップ（overlay）最適化版 ======== */
+#card-detail-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: none; /* ← 初期状態は非表示に変更 */
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* 他の要素より確実に前面 */
+}
+
+/* 表示状態（JS で overlay.classList.add('active') を付ける） */
+#card-detail-overlay.active {
+  display: flex;
+}
+
+/* 完全非表示（JS の hidden 用） */
+.hidden {
+  display: none !important;
+}
+
+/* ======== ポップアップ本体 ======== */
+#card-detail-popup {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 320px;
+  text-align: center;
+  position: relative;
+}
+
+#card-detail-popup img {
+  width: 100%;
+  height: auto;
+}
+
+#close-popup {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* ======== ここから元の CSS（UI 部分） ======== */
+
+#deck-builder {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#card-list {
+    float: left;
+    width: 48%;
+    height: 450px;
+    border: 1px solid #000;
+    overflow-y: scroll;
+    display: flex;
+    flex-wrap: wrap;
+    font-size:16px;
+}
+
+#deck {
+    float: left;
+    width: 50%;
+    position: relative; /* ← これを追加 */
+
+}
+
+/* デッキリストをドロップ可能領域として可視化 */
+#deck-list {
+    min-height: 200px;
+    background-color: rgba(0, 0, 255, 0.08);
+    border: 2px dashed #444;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.deck-list .card {
+    width: 25%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 5px;
+}
+#share-deck {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    background-color: #3498db;
+    color: #fff;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 10;
+}
+.menu-container {
+    position: relative;
+    display: inline-block;
+}
+
+.menu-button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.card {
+    cursor: pointer;
+    margin-bottom: 5px;
+    width:48%;
+    box-sizing: border-box;
+}
+
+.card:hover {
+    background-color: #eee;
+}
+
+img {
+  height: 200px;
+  width:160px;
+}
+
+/* スマホ縦 */
+@media only screen and (max-width: 767px) and (orientation: portrait) {
+    .img {
+     height:45px;
+     width:30px;
+    }
+}
+
+/* スマホ横 */
+@media only screen and (max-width: 767px) and (orientation: landscape) {
+    .img {
+    height:90px;
+    width:70px;
+    }
+}
+
+.deck-list img {
+  width: 90px;
+  height: 110px;
+}
+
+/* スマホ縦（デッキ内画像） */
+@media only screen and (max-width: 767px) and (orientation: portrait) {
+    .deck-list img {
+        width: 40px;
+        height: 50px;
+    }
+}
+
+/* スマホ横（デッキ内画像） */
+@media only screen and (max-width: 767px) and (orientation: landscape) {
+    .deck-list img {
+        width: 62px;
+        height: 85px;
+    }
+}
+
+#menu-container {
+    position: relative;
+    display: inline-block;
+}
+
+#menu-button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+#replace-confirm {
+  margin-top: 15px;
+  padding: 10px;
+  background: #fff3cd;
+  border: 1px solid #e0c97f;
+  border-radius: 5px;
+}
+.related-cards {
+  margin-top: 15px;
+  text-align: left;
+}
+
+.related-cards h3 {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.related-cards img {
+  width: 60px;
+  height: auto;
+  margin: 5px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.related-cards img:hover {
+  border-color: #3498db;
+}
+
+/* 検索メニュー */
+.search-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #f9f9f9;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    z-index: 1;
+    width: 320px;
+}
+
+#search-menu label,
+#search-menu input,
+#search-menu button {
+    margin-bottom: 10px;
+}
+.search-menu.visible {
+    display: block;
+}
+#race-search-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 10px;
+  display: none; /* ← 最初は隠す */
+
+}
+
+.race-icon {
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: transform 0.2s;
+}
+
+.race-icon:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
+}
+/* ======== 種族検索モーダル ======== */
+#race-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: none; /* 初期は非表示 */
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+#race-modal.active {
+  display: flex;
+}
+
+#race-modal .race-modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 600px;
+  max-height: 80vh;
+  overflow-y: auto;
+  text-align: center;
+  position: relative;
+}
+
+#race-modal-close {
+  margin-top: 15px;
+  padding: 8px 14px;
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
