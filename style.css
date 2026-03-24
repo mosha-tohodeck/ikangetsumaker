@@ -278,7 +278,6 @@ img {
   max-width: 600px;
   max-height: 80vh;
   overflow-y: auto;
-  text-align: center;
   position: relative;
 }
 
@@ -290,4 +289,110 @@ img {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+}
+/* style.css の末尾に追記してください */
+
+/* ---- テンプレートボタン（常時表示） ---- */
+#template-toggle {
+  display: block;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+#template-toggle:hover { background-color: #2980b9; }
+
+/* ---- オーバーレイ背景 ---- */
+#template-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.55);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#template-overlay.hidden { display: none; }
+
+/* ---- テンプレート一覧パネル ---- */
+#template-panel {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  width: 90%;
+  max-width: 700px;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+#template-panel h3 {
+  margin: 0 0 16px;
+  font-size: 18px;
+  text-align: center;
+}
+
+/* ✕ 閉じるボタン */
+#template-close {
+  position: absolute;
+  top: 10px; right: 14px;
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  color: #555;
+}
+#template-close:hover { color: #000; }
+
+/* ---- デッキ一覧：横並び・折り返しあり ---- */
+#template-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start;
+}
+
+/* デッキ1枚ブロック */
+.template-card {
+  text-decoration: none;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100px;
+}
+.template-card:hover .fan-center {
+  transform: translateY(-6px) scale(1.07);
+}
+
+/* ファン（扇形）サムネ */
+.template-fan {
+  position: relative;
+  width: 100px;
+  height: 95px;
+}
+.template-fan img {
+  position: absolute;
+  width: 55px;
+  height: 75px;
+  border-radius: 4px;
+  border: 1px solid #aaa;
+  box-shadow: 1px 2px 5px rgba(0,0,0,0.25);
+  transition: transform 0.2s;
+  object-fit: cover;
+}
+.fan-left   { left: 0;    top: 16px; transform: rotate(-15deg); z-index: 1; }
+.fan-center { left: 22px; top: 4px;  transform: rotate(0deg);   z-index: 3; }
+.fan-right  { left: 44px; top: 16px; transform: rotate(15deg);  z-index: 2; }
+
+.template-name {
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  margin: 4px 0 0;
 }
