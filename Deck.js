@@ -1124,8 +1124,6 @@ const deckCards = Array(12);
     });
     //ここまで追加。
 // ikangetsumaker.js の DOMContentLoaded 内、
-// 最後の }); の直前に追記してください
-
 // テンプレートオーバーレイの開閉
 const templateToggle  = document.getElementById('template-toggle');
 const templateOverlay = document.getElementById('template-overlay');
