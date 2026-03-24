@@ -1,7 +1,6 @@
 body {
     font-family: Arial, sans-serif;
 }
-
 /* ======== カード詳細ポップアップ（overlay）最適化版 ======== */
 #card-detail-overlay {
   position: fixed;
