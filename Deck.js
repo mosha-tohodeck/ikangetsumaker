@@ -1147,7 +1147,7 @@ deck.cards.forEach(no => {
 
     document.getElementById("share-deck").addEventListener("click", () => {
         const deckNOs = Object.values(deckCards).filter(v => v);
-        const baseURL = "https://mosha-tohodeck.github.io/ikangetsumaker/PRE.html";
+        const baseURL = "https://mosha-tohodeck.github.io/ikangetsumaker/DECK.html";
         const url = baseURL + "?deck=" + deckNOs.join(",");
         navigator.clipboard.writeText(url);
         alert("デッキURLをコピーしました！");
