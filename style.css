@@ -1,6 +1,7 @@
 body {
     font-family: Arial, sans-serif;
 }
+
 /* ======== カード詳細ポップアップ（overlay）最適化版 ======== */
 #card-detail-overlay {
   position: fixed;
@@ -36,7 +37,7 @@ body {
 }
 
 #card-detail-popup img {
-  width: 100%;
+  width: 80%;
   height: auto;
 }
 
@@ -80,6 +81,11 @@ body {
     border: 2px dashed #444;
     padding: 10px;
     margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+    list-style: none;
+
 }
 
 .deck-list .card {
@@ -196,8 +202,9 @@ img {
 }
 
 .related-cards img {
-  width: 60px;
-  height: auto;
+  width: 40px !important;
+  height: auto !important;
+
   margin: 5px;
   cursor: pointer;
   border: 1px solid #ccc;
@@ -355,6 +362,7 @@ img {
   gap: 20px;
   justify-content: flex-start;
 }
+
 /* デッキ1枚ブロック */
 .template-card {
   text-decoration: none;
