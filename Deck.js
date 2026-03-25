@@ -1029,6 +1029,45 @@ const deckCards = Array(12);
         overlay.classList.remove('hidden');
         overlay.classList.add('active');
     }
+    function openTemplatePreview(deck) {
+  const overlay = document.getElementById('template-preview-overlay');
+  const nameEl  = document.getElementById('template-preview-name');
+  const yearEl  = document.getElementById('template-preview-year');
+  const cardsEl = document.getElementById('template-preview-cards');
+  const makeBtn = document.getElementById('template-preview-make-btn');
+
+  nameEl.textContent = deck.name;
+  yearEl.textContent = deck.year + '年';
+
+  cardsEl.innerHTML = '';
+
+deck.cards.forEach(no => {
+    const card = cards.find(c => c.NO === no);
+    if (!card) return;
+
+    const div = document.createElement('div');
+    div.classList.add('preview-card');
+
+    div.innerHTML = `
+      <img src="${card.image}" class="preview-card-img">
+    `;
+
+    // ★ ここが絶対必要
+    div.addEventListener('click', () => {
+        showCardDetail(card);
+    });
+
+    cardsEl.appendChild(div);
+});
+
+  // ★ 右下の「このデッキで作る」ボタン
+  makeBtn.onclick = () => {
+    window.location.href = deck.url;
+  };
+  overlay.classList.remove('hidden');
+}
+// ikangetsumaker.js の DOMContentLoaded 内、
+// 最後の }); の直前に追記してください
     // ✖ボタンで閉じる（closeBtn を使う） ← 修正ポイント②
     closeBtn.addEventListener('click', () => {
 
@@ -1108,7 +1147,7 @@ const deckCards = Array(12);
 
     document.getElementById("share-deck").addEventListener("click", () => {
         const deckNOs = Object.values(deckCards).filter(v => v);
-        const baseURL = "https://mosha-tohodeck.github.io/ikangetsumaker/DECK.html";
+        const baseURL = "https://mosha-tohodeck.github.io/ikangetsumaker/PRE.html";
         const url = baseURL + "?deck=" + deckNOs.join(",");
         navigator.clipboard.writeText(url);
         alert("デッキURLをコピーしました！");
@@ -1225,57 +1264,14 @@ function renderTemplateDecks(list) {
     <div class="template-year">${deck.year}年</div>
     `;
 
-    // ★ クリックでリンクへ飛ぶ
-
     div.addEventListener("click", () => {
         openTemplatePreview(deck);
     });
-
+    // ★ クリックでリンクへ飛ぶ
     container.appendChild(div);
   });
 }
-function openTemplatePreview(deck) {
-  const overlay = document.getElementById('template-preview-overlay');
-  const nameEl  = document.getElementById('template-preview-name');
-  const yearEl  = document.getElementById('template-preview-year');
-  const cardsEl = document.getElementById('template-preview-cards');
-  const makeBtn = document.getElementById('template-preview-make-btn');
 
-  nameEl.textContent = deck.name;
-  yearEl.textContent = deck.year + '年';
-
-  cardsEl.innerHTML = '';
-
-  deck.cards.forEach(no => {
-    const card = cards.find(c => c.NO === no);
-    if (!card) return;
-
-    const div = document.createElement('div');
-    div.classList.add('preview-card');
-
-    div.innerHTML = `
-      <img src="${card.image}" class="preview-card-img">
-    `;
-
-    // ★ プレビュー内のカードも詳細ポップアップを開く
-    div.addEventListener('click', () => {
-      openCardDetail(card); // ← 既存のカード詳細関数を呼ぶ
-    });
-
-    cardsEl.appendChild(div);
-  });
-
-  // ★ 右下の「このデッキで作る」ボタン
-  makeBtn.onclick = () => {
-    div.addEventListener("click", () => {
-        openTemplatePreview(deck);
-    });
-  };
-
-  overlay.classList.remove('hidden');
-}
-// ikangetsumaker.js の DOMContentLoaded 内、
-// 最後の }); の直前に追記してください
 
 // テンプレートオーバーレイの開閉
 const templateToggle  = document.getElementById('template-toggle');
