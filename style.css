@@ -402,3 +402,28 @@ img {
   text-align: center;
   margin: 4px 0 0;
 }
+.template-preview-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 横4列 */
+    gap: 10px;
+    padding: 10px;
+}
+
+.preview-card {
+    width: 100%;
+    cursor: pointer;
+}
+
+.preview-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+#template-overlay {
+    z-index: 1000;
+}
+
+#template-preview-overlay {
+    z-index: 2000; /* これでプレビューが最前面に来る */
+}
