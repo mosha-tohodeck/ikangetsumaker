@@ -1209,17 +1209,19 @@ function renderTemplateDecks(list) {
   list.forEach(deck => {
     const div = document.createElement("div");
     div.classList.add("template-card");
+    const card1 = cards.find(c => c.NO === deck.cards[0]);
+    const card2 = cards.find(c => c.NO === deck.cards[1]);
+    const card3 = cards.find(c => c.NO === deck.cards[2]);
 
     div.innerHTML = `
-      <div class="template-fan">
-        <img src="${cards[deck.cards[0]].image}" class="fan-left">
-        <img src="${cards[deck.cards[1]].image}" class="fan-center">
-        <img src="${cards[deck.cards[2]].image}" class="fan-right">
-      </div>
-      <div class="template-name">${deck.name}</div>
-      <div class="template-year">${deck.year}年</div>
+    <div class="template-fan">
+    <img src="${card1.image}" class="fan-left">
+    <img src="${card2.image}" class="fan-center">
+    <img src="${card3.image}" class="fan-right">
+    </div>
+    <div class="template-name">${deck.name}</div>
+    <div class="template-year">${deck.year}年</div>
     `;
-
     // ★ クリックでリンクへ飛ぶ
     div.addEventListener("click", () => {
       window.location.href = deck.url;
