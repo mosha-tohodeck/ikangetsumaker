@@ -1186,6 +1186,7 @@ function renderTemplateDecks(list) {
     div.addEventListener("click", () => {
         openTemplatePreview(deck);
     });
+
     container.appendChild(div);
   });
 }
