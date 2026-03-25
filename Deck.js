@@ -752,7 +752,7 @@ document.addEventListener('DOMContentLoaded', function () {
             name: "妖怪妖獣",
             year: 2025,
             races: ["妖怪", "妖獣"],
-            cards: [484,495,130],
+            cards: [483,484,485,537,495,450,130,167,50,181,278,135],
             url: "DECK.html?deck=483,484,485,537,495,450,130,167,50,181,278,135"
         },
         {
@@ -1108,7 +1108,7 @@ const deckCards = Array(12);
 
     document.getElementById("share-deck").addEventListener("click", () => {
         const deckNOs = Object.values(deckCards).filter(v => v);
-        const baseURL = "https://mosha-tohodeck.github.io/ikangetsumaker/DECK.html";
+        const baseURL = "https://mosha-tohodeck.github.io/ikangetsumaker/PRE.html";
         const url = baseURL + "?deck=" + deckNOs.join(",");
         navigator.clipboard.writeText(url);
         alert("デッキURLをコピーしました！");
@@ -1210,6 +1210,7 @@ function renderTemplateDecks(list) {
   list.forEach(deck => {
     const div = document.createElement("div");
     div.classList.add("template-card");
+
     const card1 = cards.find(c => c.NO === deck.cards[0]);
     const card2 = cards.find(c => c.NO === deck.cards[1]);
     const card3 = cards.find(c => c.NO === deck.cards[2]);
@@ -1223,12 +1224,53 @@ function renderTemplateDecks(list) {
     <div class="template-name">${deck.name}</div>
     <div class="template-year">${deck.year}年</div>
     `;
+
     // ★ クリックでリンクへ飛ぶ
     div.addEventListener("click", () => {
       window.location.href = deck.url;
     });
     container.appendChild(div);
   });
+}
+function openTemplatePreview(deck) {
+  const overlay = document.getElementById('template-preview-overlay');
+  const nameEl  = document.getElementById('template-preview-name');
+  const yearEl  = document.getElementById('template-preview-year');
+  const cardsEl = document.getElementById('template-preview-cards');
+  const makeBtn = document.getElementById('template-preview-make-btn');
+
+  nameEl.textContent = deck.name;
+  yearEl.textContent = deck.year + '年';
+
+  cardsEl.innerHTML = '';
+
+  deck.cards.forEach(no => {
+    const card = cards.find(c => c.NO === no);
+    if (!card) return;
+
+    const div = document.createElement('div');
+    div.classList.add('preview-card');
+
+    div.innerHTML = `
+      <img src="${card.image}" class="preview-card-img">
+    `;
+
+    // ★ プレビュー内のカードも詳細ポップアップを開く
+    div.addEventListener('click', () => {
+      openCardDetail(card); // ← 既存のカード詳細関数を呼ぶ
+    });
+
+    cardsEl.appendChild(div);
+  });
+
+  // ★ 右下の「このデッキで作る」ボタン
+  makeBtn.onclick = () => {
+    div.addEventListener("click", () => {
+        openTemplatePreview(deck);
+    });
+  };
+
+  overlay.classList.remove('hidden');
 }
 // ikangetsumaker.js の DOMContentLoaded 内、
 // 最後の }); の直前に追記してください
@@ -1237,7 +1279,20 @@ function renderTemplateDecks(list) {
 const templateToggle  = document.getElementById('template-toggle');
 const templateOverlay = document.getElementById('template-overlay');
 const templateClose   = document.getElementById('template-close');
+const templatePreviewOverlay = document.getElementById('template-preview-overlay');
+const templatePreviewClose   = document.getElementById('template-preview-close');
 
+if (templatePreviewOverlay && templatePreviewClose) {
+  templatePreviewClose.addEventListener('click', () => {
+    templatePreviewOverlay.classList.add('hidden');
+  });
+
+  templatePreviewOverlay.addEventListener('click', (e) => {
+    if (e.target === templatePreviewOverlay) {
+      templatePreviewOverlay.classList.add('hidden');
+    }
+  });
+}
 if (templateToggle && templateOverlay && templateClose) {
     // ボタンで開く
     templateToggle.addEventListener('click', () => {
@@ -1254,6 +1309,9 @@ if (templateToggle && templateOverlay && templateClose) {
             templateOverlay.classList.add('hidden');
         }
     });
+}
+
+});
 }
 
 });
