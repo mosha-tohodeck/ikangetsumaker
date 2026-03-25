@@ -752,7 +752,7 @@ document.addEventListener('DOMContentLoaded', function () {
             name: "妖怪妖獣",
             year: 2025,
             races: ["妖怪", "妖獣"],
-            cards: [483,484,485,537,495,450,130,167,50,181,278,135],
+            cards: [483,484,485],
             url: "DECK.html?deck=483,484,485,537,495,450,130,167,50,181,278,135"
         },
         {
