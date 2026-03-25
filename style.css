@@ -404,22 +404,23 @@ img {
 }
 .template-preview-cards {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 横4列 */
-    gap: 1px;
-    padding: 1px;
+    grid-template-columns: repeat(4, 80px); /* ← カードの実寸に合わせる */
+    gap: 0;
+    padding: 0;
 }
 
 .preview-card {
-    width: 80%;
+    width: 80px; /* ← カードの幅を固定 */
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
     cursor: pointer;
 }
 
 .preview-card img {
     width: 100%;
-    height: auto;
-    display: block;
+    height: 100%;
+    object-fit: cover;
 }
-
 #template-overlay {
     z-index: 1000;
 }
