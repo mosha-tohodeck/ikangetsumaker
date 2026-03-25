@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const menuButton = document.getElementById('menu-button');
     const searchMenu = document.getElementById('search-menu');
     const packSelect = document.getElementById('packSelect');
+    
 
     const cards = [
         { NO: 1,id: 1, title: '①ルーミア', image: '1ルーミア エラッタWIKI.jpeg', category: '《常闇の妖怪》ルーミア,《常闇の妖怪》るーみあ,そーなのかー,夜符「ナイトバード」', into: '紅魔郷', ability:'攻撃スペル', effect:'手札から守護札を出す', race:'妖怪', condition:'', wikiLink: 'https://touhouikangetsu.wiki.fc2.com/wiki/%E3%80%8E%E2%91%A0%E3%80%8A%E5%AE%B5%E9%97%87%E3%81%AE%E5%A6%96%E6%80%AA%E3%80%8B%E3%83%AB%E3%83%BC%E3%83%9F%E3%82%A2%E3%80%8F',same:[13]},
@@ -701,6 +702,23 @@ document.addEventListener('DOMContentLoaded', function () {
         
         // 他のカードも同様に追加
     ];
+    const templateDecks = [
+        {
+            id: 1,
+            name: "妖怪妖獣",
+            year: 2025,
+            races: ["妖怪", "妖獣"],
+            cards: [483,484,485,537,495,450,130,167,50,181,278,135],
+            url: "DECK.html?deck=483,484,485,537,495,450,130,167,50,181,278,135"
+        },
+        {
+            id: 2,
+            name: "妖々夢Remakeデッキ",
+            year: 2022,
+            races: ["幽霊", "妖怪"],
+            cards: [5, 6, 7, 8]
+        }
+    ];
 
 
 const deckCards = Array(12);
@@ -789,7 +807,7 @@ const deckCards = Array(12);
         const selectedEffect = effectSearch.value.toLowerCase();
         const selectedRace = raceSearch.value.toLowerCase();
         const selectedCondition = conditionSearch.value.toLowerCase();
-        const selectedId = idSearch.value.toLowerCase();
+        const selectedId = idSearch.value.toLowerCase();        
         const selectedPack = packSelect.value.toLowerCase(); // 追加: パックの選択値
         const selectedTeam = teamSearch.value.toLowerCase();
         const filteredCards = cards.filter(function (card) {
@@ -1034,6 +1052,7 @@ const deckCards = Array(12);
         }
     });
     // 🔽 種族アイコンをクリックしたときの検索処理
+
     document.querySelectorAll(".race-icon").forEach(icon => {
         icon.addEventListener("click", () => {
             const race = icon.dataset.race;
@@ -1045,7 +1064,7 @@ const deckCards = Array(12);
 
     document.getElementById("share-deck").addEventListener("click", () => {
         const deckNOs = Object.values(deckCards).filter(v => v);
-        const baseURL = "https://mosha-tohodeck.github.io/ikangetsumaker/DECK.html";
+        const baseURL = "https://mosha-tohodeck.github.io/ikangetsumaker/PRE.html";
         const url = baseURL + "?deck=" + deckNOs.join(",");
         navigator.clipboard.writeText(url);
         alert("デッキURLをコピーしました！");
@@ -1121,7 +1140,53 @@ const deckCards = Array(12);
         document.getElementById("load-dialog").classList.add("hidden");
     });
     //ここまで追加。
+    // ★ テンプレートソートのイベントリスナー
+    document.getElementById("sort-year").addEventListener("change", displayTemplateDecks);
+    document.getElementById("sort-race").addEventListener("change", displayTemplateDecks);
+    function displayTemplateDecks() {
+        let list = [...templateDecks];
+        // 年ソート
+        const yearSort = document.getElementById("sort-year").value;
+        if (yearSort === "asc") {
+            list.sort((a, b) => a.year - b.year);
+        } else if (yearSort === "desc") {
+            list.sort((a, b) => b.year - a.year);
+        }
+        // 種族フィルタ
+        const raceFilter = document.getElementById("sort-race").value;
+        if (raceFilter) {
+            list = list.filter(deck => deck.races.includes(raceFilter));
+        }
+        renderTemplateDecks(list);
+    }
+function renderTemplateDecks(list) {
+  const container = document.getElementById("template-list");
+  container.innerHTML = "";
+
+  list.forEach(deck => {
+    const div = document.createElement("div");
+    div.classList.add("template-card");
+
+    div.innerHTML = `
+      <div class="template-fan">
+        <img src="${cards[deck.cards[0]].image}" class="fan-left">
+        <img src="${cards[deck.cards[1]].image}" class="fan-center">
+        <img src="${cards[deck.cards[2]].image}" class="fan-right">
+      </div>
+      <div class="template-name">${deck.name}</div>
+      <div class="template-year">${deck.year}年</div>
+    `;
+
+    // ★ クリックでリンクへ飛ぶ
+    div.addEventListener("click", () => {
+      window.location.href = deck.url;
+    });
+    container.appendChild(div);
+  });
+}
 // ikangetsumaker.js の DOMContentLoaded 内、
+// 最後の }); の直前に追記してください
+
 // テンプレートオーバーレイの開閉
 const templateToggle  = document.getElementById('template-toggle');
 const templateOverlay = document.getElementById('template-overlay');
@@ -1131,6 +1196,7 @@ if (templateToggle && templateOverlay && templateClose) {
     // ボタンで開く
     templateToggle.addEventListener('click', () => {
         templateOverlay.classList.remove('hidden');
+        displayTemplateDecks(); // ← これを追加
     });
     // ✕ボタンで閉じる
     templateClose.addEventListener('click', () => {
@@ -1143,4 +1209,5 @@ if (templateToggle && templateOverlay && templateClose) {
         }
     });
 }
+
 });
