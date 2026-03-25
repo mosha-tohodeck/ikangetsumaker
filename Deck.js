@@ -720,7 +720,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     ];
 
-
 const deckCards = Array(12);
     function addToDeckDOM(card) {
         const deckItem = document.createElement('li');
