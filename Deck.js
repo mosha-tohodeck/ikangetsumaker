@@ -752,7 +752,7 @@ document.addEventListener('DOMContentLoaded', function () {
             name: "妖怪妖獣",
             year: 2025,
             races: ["妖怪", "妖獣"],
-            cards: [483,484,485],
+            cards: [484,495,130],
             url: "DECK.html?deck=483,484,485,537,495,450,130,167,50,181,278,135"
         },
         {
@@ -760,7 +760,8 @@ document.addEventListener('DOMContentLoaded', function () {
             name: "妖々夢Remakeデッキ",
             year: 2022,
             races: ["幽霊", "妖怪"],
-            cards: [5, 6, 7, 8]
+            cards: [5, 6, 7],
+            url: "DECK.html?deck=483,484,485,537,495,450,130,167,50,181,278,135"
         }
     ];
 
