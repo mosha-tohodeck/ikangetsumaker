@@ -1182,8 +1182,9 @@ function renderTemplateDecks(list) {
     `;
 
     // ★ クリックでリンクへ飛ぶ
+
     div.addEventListener("click", () => {
-      window.location.href = deck.url;
+        openTemplatePreview(deck);
     });
     container.appendChild(div);
   });
