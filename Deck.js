@@ -1312,6 +1312,4 @@ if (templateToggle && templateOverlay && templateClose) {
 }
 
 });
-}
 
-});
