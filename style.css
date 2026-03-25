@@ -370,7 +370,7 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100px;
+  width: 60px;
 }
 .template-card:hover .fan-center {
   transform: translateY(-6px) scale(1.07);
