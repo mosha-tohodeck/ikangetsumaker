@@ -405,12 +405,12 @@ img {
 .template-preview-cards {
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* 横4列 */
-    gap: 10px;
-    padding: 2px;
+    gap: 1px;
+    padding: 1px;
 }
 
 .preview-card {
-    width: 60%;
+    width: 80%;
     cursor: pointer;
 }
 
