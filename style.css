@@ -370,7 +370,7 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100px;
+  width: 60px;
 }
 .template-card:hover .fan-center {
   transform: translateY(-6px) scale(1.07);
@@ -427,4 +427,26 @@ img {
 
 #template-preview-overlay {
     z-index: 2000; /* これでプレビューが最前面に来る */
+}
+.template-preview-body {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+/* 左側（カード） */
+.template-preview-left {
+    flex: 3;
+}
+
+/* 右側（説明欄） */
+.template-description {
+    flex: 2;
+    max-height: 600px;
+    overflow-y: auto;
+    padding: 10px;
+    background: rgba(0,0,0,0.3);
+    border-radius: 8px;
+    color: #fff;
+    line-height: 1.5;
 }
