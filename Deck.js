@@ -749,8 +749,10 @@ document.addEventListener('DOMContentLoaded', function () {
     const templateDecks = [
         {
             id: 1,
-            name: "永遠亭耐久←NEW!",
+            name: "⑫輝夜耐久←NEW!",
             year: 2026,
+            description: "月の民・玉兎・妖獣の三種族混合構築。\n⑫輝夜や⑦永遠亭組の効果でひたすら攻撃フェーズをスキップし続け、相手のリソースが切れるまで耐久し続けるデッキ。⑫輝夜が撃破されても⑦永遠亭組で回収できるのでリカバリーも効くぞ。",
+            keycards:[484,495,130],
             races: ["月の民", "妖獣", "玉兎"],
             cards: [483, 484, 485, 537, 495, 450, 130, 167, 50, 181, 278, 135],
             url: "DECK.html?deck=483,484,485,537,495,450,130,167,50,181,278,135"
@@ -759,6 +761,8 @@ document.addEventListener('DOMContentLoaded', function () {
             id: 2,
             name: "秘封天狗妹紅リザ",
             year: 2025,
+            description: "",
+            keycards:[484,495,130],
             races: ["人間", "天狗"],
             cards: [497, 395, 526, 397, 398, 502, 400, 401, 352, 522, 3026, 86],
             url: "DECK.html?deck=497,395,526,397,398,502,400,401,352,522,3026,86"
@@ -767,6 +771,8 @@ document.addEventListener('DOMContentLoaded', function () {
             id: 3,
             name: "③霊夢回避軸",
             year: 2025,
+            description: "",
+            keycards:[484,495,130],
             races: ["GS（多種族）", '巫女'],
             cards: [432, 369, 410, 423, 461, 425, 463, 203, 252, 429, 85, 468],
             url: "DECK.html?deck=432,369,410,423,461,425,463,203,252,429,85,468"
@@ -775,6 +781,8 @@ document.addEventListener('DOMContentLoaded', function () {
             id: 4,
             name: "妖怪妖獣",
             year: 2025,
+            description: "",
+            keycards:[484,495,130],
             races: ["妖怪", "妖獣"],
             cards: [483, 484, 485, 537, 495, 450, 130, 167, 50, 181, 278, 135],
             url: "DECK.html?deck=483,484,485,537,495,450,130,167,50,181,278,135"
@@ -783,6 +791,8 @@ document.addEventListener('DOMContentLoaded', function () {
             id: 5,
             name: "付喪妹紅リザ",
             year: 2025,
+            description: "",
+            keycards:[484,495,130],
             races: ["付喪神", "人間"],
             cards: [497, 233, 526, 397, 176, 177, 178, 325, 479, 377, 3041, 86],
             url: "DECK.html?deck=497,233,526,397,176,177,178,325,479,377,3041,86"
@@ -791,6 +801,8 @@ document.addEventListener('DOMContentLoaded', function () {
             id: 6,
             name: "バカルテット",
             year: 2025,
+            description: "",
+            keycards:[484,495,130],
             races: ["妖怪", "GS（多種族）"],
             cards: [432, 149, 210, 423, 2004, 425, 463, 490, 575, 429, 3026, 468],
             url: "DECK.html?deck=432,149,210,423,2004,425,463,490,575,429,3026,468"
@@ -799,6 +811,8 @@ document.addEventListener('DOMContentLoaded', function () {
             id: 7,
             name: "秋姉妹メタビ",
             year: 2025,
+            description: "",
+            keycards:[484,495,130],
             races: ["神", "妖精"],
             cards: [469, 3071, 512, 3029, 372, 373, 516, 3023, 562, 353, 3068, 379],
             url: "DECK.html?deck=469,3071,512,3029,372,373,516,3023,562,353,3068,379"
@@ -807,6 +821,8 @@ document.addEventListener('DOMContentLoaded', function () {
             id: 8,
             name: "⑥蓬莱型人形裁判",
             year: 2025,
+            description: "",
+            keycards:[484,495,130],
             races: ["魔術師", "人形"],
             cards: [471, 472, 434, 41, 475, 3014, 3007, 351, 144, 480, 481, 171],
             url: "DECK.html?deck=471,472,434,41,475,3014,3007,351,144,480,481,171"
@@ -815,6 +831,8 @@ document.addEventListener('DOMContentLoaded', function () {
             id: 9,
             name: "ラルバロック",
             year: 2025,
+            description: "",
+            keycards:[484,495,130],
             races: ["GS（多種族）", "妖精"],
             cards: [432, 511, 422, 139, 514, 3043, 463, 167, 416, 519, 520, 521],
             url: "DECK.html?deck=432,511,422,139,514,3043,463,167,416,519,520,521"
@@ -823,6 +841,8 @@ document.addEventListener('DOMContentLoaded', function () {
             id: 10,
             name: "ちょこふぁんGS",
             year: 2025,
+            description: "",
+            keycards:[484,495,130],
             races: ["GS（多種族）", "霊力"],
             cards: [566, 555, 556, 557, 558, 559, 560, 2059, 562, 429, 564, 565],
             url: "DECK.html?deck=566,555,556,557,558,559,560,2059,562,429,564,565"
@@ -831,6 +851,8 @@ document.addEventListener('DOMContentLoaded', function () {
             id: 11,
             name: "ちょこふぁん回避軸",
             year: 2025,
+            description: "",
+            keycards:[484,495,130],
             races: ["GS（多種族）", "霊力"],
             cards: [566,369,150,211,461,559,530,167,3009,429,564,379],
             url: "DECK.html?deck=566,369,150,211,461,559,530,167,3009,429,564,379"
@@ -839,6 +861,8 @@ document.addEventListener('DOMContentLoaded', function () {
             id: 12,
             name: "純妖精",
             year: 2025,
+            description: "",
+            keycards:[484,495,130],
             races: ["妖精"],
             cards: [510, 511, 15, 163, 412, 515, 324, 191, 3054, 519, 520, 521],
             url: "DECK.html?deck=510,511,15,163,412,515,324,191,3054,519,520,521"
@@ -847,6 +871,8 @@ document.addEventListener('DOMContentLoaded', function () {
             id: 13,
             name: "幽霊GS",
             year: 2025,
+            description: "",
+            keycards:[484,495,130],
             races: ["幽霊"],
             cards: [75, 357, 3048, 3004, 372, 361, 166, 45, 276, 3015, 366, 379],
             url: "DECK.html?deck=75,357,3048,3004,372,361,166,45,276,3015,366,379"
@@ -855,6 +881,8 @@ document.addEventListener('DOMContentLoaded', function () {
             id: 14,
             name: "妖怪サグメ",
             year: 2024,
+            description: "",
+            keycards:[484,495,130],
             races: ["妖怪", "月の民"],
             cards: [432, 484, 485, 3019, 284, 331, 463, 167, 470, 429, 493, 2050],
             url: "DECK.html?deck=432,484,485,3019,284,331,463,167,470,429,493,2050"
@@ -863,6 +891,8 @@ document.addEventListener('DOMContentLoaded', function () {
             id: 15,
             name: "⑧紫回避軸",
             year: 2024,
+            description: "",
+            keycards:[484,495,130],
             races: ["妖怪", "人間"],
             cards: [432, 1025, 210, 397, 248, 399, 504, 407, 59, 253, 23, 2053],
             url: "DECK.html?deck=432,1025,210,397,248,399,504,407,59,253,23,2053"
@@ -871,6 +901,8 @@ document.addEventListener('DOMContentLoaded', function () {
             id: 16,
             name: "純天狗",
             year: 2024,
+            description: "",
+            keycards:[484,495,130],
             races: ["天狗"],
             cards: [394, 395, 396, 91, 116, 117, 106, 215, 352, 466, 404, 419],
             url: "DECK.html?deck=394,395,396,91,116,117,106,215,352,466,404,419"
@@ -879,6 +911,8 @@ document.addEventListener('DOMContentLoaded', function () {
             id: 17,
             name: "妖怪悪魔",
             year: 2024,
+            description: "",
+            keycards:[484,495,130],
             races: ["妖怪", "悪魔"],
             cards: [497,484,334,397,200,285,338,401,46,109,342,207],
             url: "DECK.html?deck=497,484,334,397,200,285,338,401,46,109,342,207"
@@ -887,6 +921,8 @@ document.addEventListener('DOMContentLoaded', function () {
             id: 18,
             name: "⑪霊夢＆文",
             year: 2024,
+            description: "",
+            keycards:[484,495,130],
             races: ["人間", "神"],
             cards: [184, 369, 138, 397, 248, 3006, 504, 505, 506, 507, 508, 86],
             url: "DECK.html?deck=184,369,138,397,248,3006,504,505,506,507,508,86"
@@ -895,6 +931,8 @@ document.addEventListener('DOMContentLoaded', function () {
             id: 19,
             name: "⑥パチェ型人形裁判",
             year: 2024,
+            description: "",
+            keycards:[484,495,130],
             races: ["人形", "魔術師"],
             cards: [408, 472, 434, 211, 475, 18, 3007, 58, 144, 480, 481, 171],
             url: "DECK.html?deck=408,472,434,211,475,18,3007,58,144,480,481,171"
@@ -903,6 +941,8 @@ document.addEventListener('DOMContentLoaded', function () {
             id: 20,
             name: "回避サグメ",
             year: 2023,
+            description: "",
+            keycards:[484,495,130],
             races: ["幽霊", "月の民"],
             cards: [432, 369, 358, 211, 360, 297, 388, 167, 108, 365, 366, 2050],
             url: "DECK.html?deck=432,369,358,211,360,297,388,167,108,365,366,2050"
@@ -911,6 +951,8 @@ document.addEventListener('DOMContentLoaded', function () {
             id: 21,
             name: "妖獣サグメ",
             year: 2023,
+            description: "",
+            keycards:[484,495,130],
             races: ["月の民", "妖獣", "玉兎"],
             cards: [432, 87, 380, 316, 386, 387, 426, 452, 50, 145, 278, 2050],
             url: "DECK.html?deck=432,87,380,316,386,387,426,452,50,145,278,2050"
@@ -919,6 +961,8 @@ document.addEventListener('DOMContentLoaded', function () {
             id: 22,
             name: "レイマリ特殊勝利",
             year: 2023,
+            description: "",
+            keycards:[484,495,130],
             races: ["GS（多種族）", "人間"],
             cards: [432, 395, 422, 435, 322, 249, 202, 375, 288, 217, 254, 111],
             url: "DECK.html?deck=432,395,422,435,322,249,202,375,288,217,254,111"
@@ -927,6 +971,8 @@ document.addEventListener('DOMContentLoaded', function () {
             id: 23,
             name: "純悪魔",
             year: 2023,
+            description: "",
+            keycards:[484,495,130],
             races: ["悪魔", "人間"],
             cards: [196, 209, 334, 321, 200, 285, 338, 401, 204, 145, 342, 24],
             url: "DECK.html?deck=196,209,334,321,200,285,338,401,204,145,342,24"
@@ -935,6 +981,8 @@ document.addEventListener('DOMContentLoaded', function () {
             id: 24,
             name: "悪魔妹紅リザ",
             year: 2023,
+            description: "",
+            keycards:[484,495,130],
             races: ["悪魔", "人間"],
             cards: [196, 209, 334, 397, 200, 285, 338, 401, 204, 109, 342, 74],
             url: "DECK.html?deck=196,209,334,397,200,285,338,401,204,109,342,74"
@@ -943,6 +991,8 @@ document.addEventListener('DOMContentLoaded', function () {
             id: 25,
             name: "百々世リーサル",
             year: 2023,
+            description: "",
+            keycards:[484,495,130],
             races: ["GS（多種族）", "蟲", '魔術師'],
             cards: [280, 395, 210, 211, 42, 261, 286, 351, 288, 417, 158, 355],
             url: "DECK.html?deck=280,395,210,211,42,261,286,351,288,417,158,355"
@@ -951,6 +1001,8 @@ document.addEventListener('DOMContentLoaded', function () {
             id: 26,
             name: "魔界ワンショット",
             year: 2023,
+            description: "",
+            keycards:[484,495,130],
             races: ["魔界", "仙人", 'GS（多種族）'],
             cards: [432, 257, 346, 359, 152, 249, 202, 155, 288, 365, 302, 303],
             url: "DECK.html?deck=432,257,346,359,152,249,202,155,288,365,302,303"
@@ -959,6 +1011,8 @@ document.addEventListener('DOMContentLoaded', function () {
             id: 27,
             name: "鬼妖獣ゴヤ教",
             year: 2023,
+            description: "",
+            keycards:[484,495,130],
             races: ["鬼", "妖獣"],
             cards: [368, 319, 1026, 435, 272, 450, 130, 203, 453, 327, 278, 444],
             url: "DECK.html?deck=368,319,1026,435,272,450,130,203,453,327,278,444"
@@ -967,14 +1021,25 @@ document.addEventListener('DOMContentLoaded', function () {
             id: 28,
             name: "イニシエ",
             year: 2023,
+            description: "",
+            keycards:[484,495,130],
             races: ["GS（多種族）", "魔術師"],
             cards: [172, 257, 174, 211, 372, 373, 130, 95, 288, 145, 158, 379],
+            url: "DECK.html?deck=172,257,174,211,372,373,130,95,288,145,158,379"
+        },
+        {
+            id: 29,
+            name: "イニシエ",
+            year: 2023,
+            description: "なんかいろいろ\n適当に書いてみる。バレットフィリアchへようこそ！もしゃです。というわけで、今夏は",
+            keycards:[7,9,12],
+            races: ["GS（多種族）", "魔術師"],
+            cards: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
             url: "DECK.html?deck=172,257,174,211,372,373,130,95,288,145,158,379"
         }
     ];
 
-
-const deckCards = Array(12);
+    const deckCards = Array(12);
     function addToDeckDOM(card) {
         const deckItem = document.createElement('li');
         // 🔥 これを追加
@@ -1033,14 +1098,14 @@ const deckCards = Array(12);
                 addToDeckDOM(c);
             });
         }
-          console.log (deckCards);
-          localStorage.setItem("savedDeck", JSON.stringify(deckCards));
+        console.log(deckCards);
+        localStorage.setItem("savedDeck", JSON.stringify(deckCards));
     }
     function removeFromDeck(deckItem, cardId) {
-      console.log (deckCards);
+        console.log(deckCards);
         deckList.removeChild(deckItem);
         deckCards[cardId] = 0;
-          console.log (deckCards);
+        console.log(deckCards);
         localStorage.setItem("savedDeck", JSON.stringify(deckCards));
     }
     function rebuildDeckFromCards() {
@@ -1060,7 +1125,7 @@ const deckCards = Array(12);
         const selectedEffect = effectSearch.value.toLowerCase();
         const selectedRace = raceSearch.value.toLowerCase();
         const selectedCondition = conditionSearch.value.toLowerCase();
-        const selectedId = idSearch.value.toLowerCase();        
+        const selectedId = idSearch.value.toLowerCase();
         const selectedPack = packSelect.value.toLowerCase(); // 追加: パックの選択値
         const selectedTeam = teamSearch.value.toLowerCase();
         const filteredCards = cards.filter(function (card) {
@@ -1091,7 +1156,7 @@ const deckCards = Array(12);
                 (selectedId === '' || card.id.toString() === selectedId) &&
                 (selectedPack === '' || card.into.toLowerCase() === selectedPack) &&
                 (selectedTeam === '' || card.team.toLowerCase() === selectedTeam)
-// 追加: パックの条件
+                // 追加: パックの条件
             );
         });
 
@@ -1119,7 +1184,7 @@ const deckCards = Array(12);
 
             cardItem.addEventListener('click', function (event) {
                 showCardDetail(card);
-                
+
                 event.stopPropagation();
             });
             wikiButton.addEventListener('click', function (event) {
@@ -1127,7 +1192,7 @@ const deckCards = Array(12);
                 event.stopPropagation();
             });
 
-        // カードのwikiへのリンクを開く処理
+            // カードのwikiへのリンクを開く処理
             cardItem.appendChild(wikiButton);
 
 
@@ -1161,23 +1226,23 @@ const deckCards = Array(12);
         addToDeck(currentDetailCard);
     });
     removeBtn.addEventListener('click', () => {
-    if (!currentDetailCard) return;
+        if (!currentDetailCard) return;
 
-    const id = currentDetailCard.id;
+        const id = currentDetailCard.id;
 
-    // デッキ内の該当カードを探す
-    const deckItem = [...deckList.children].find(li => {
-        return li.getAttribute('data-id') == id;
+        // デッキ内の該当カードを探す
+        const deckItem = [...deckList.children].find(li => {
+            return li.getAttribute('data-id') == id;
+        });
+
+        if (deckItem) {
+            removeFromDeck(deckItem, id);
+        }
+
+        // ポップアップを閉じる
+        overlay.classList.add('hidden');
+        overlay.classList.remove('active');
     });
-
-    if (deckItem) {
-        removeFromDeck(deckItem, id);
-    }
-
-    // ポップアップを閉じる
-    overlay.classList.add('hidden');
-    overlay.classList.remove('active');
-});
     replaceYes.addEventListener('click', () => {
         const id = currentDetailCard.id;
         // デッキ内の同じ id のカードを探す
@@ -1239,44 +1304,46 @@ const deckCards = Array(12);
         overlay.classList.add('active');
     }
     function openTemplatePreview(deck) {
-  const overlay = document.getElementById('template-preview-overlay');
-  const nameEl  = document.getElementById('template-preview-name');
-  const yearEl  = document.getElementById('template-preview-year');
-  const cardsEl = document.getElementById('template-preview-cards');
-  const makeBtn = document.getElementById('template-preview-make-btn');
+        const overlay = document.getElementById('template-preview-overlay');
+        const nameEl = document.getElementById('template-preview-name');
+        const descEl = document.getElementById("template-preview-description");
+        descEl.textContent = deck.description || "";
+        const yearEl = document.getElementById('template-preview-year');
+        const cardsEl = document.getElementById('template-preview-cards');
+        const makeBtn = document.getElementById('template-preview-make-btn');
 
-  nameEl.textContent = deck.name;
-  yearEl.textContent = deck.year + '年';
+        nameEl.textContent = deck.name;
+        yearEl.textContent = deck.year + '年';
 
-  cardsEl.innerHTML = '';
+        cardsEl.innerHTML = '';
 
-deck.cards.forEach(no => {
-    const card = cards.find(c => c.NO === no);
-    if (!card) return;
+        deck.cards.forEach(no => {
+            const card = cards.find(c => c.NO === no);
+            if (!card) return;
 
-    const div = document.createElement('div');
-    div.classList.add('preview-card');
+            const div = document.createElement('div');
+            div.classList.add('preview-card');
 
-    div.innerHTML = `
+            div.innerHTML = `
       <img src="${card.image}" class="preview-card-img">
     `;
 
-    // ★ ここが絶対必要
-    div.addEventListener('click', () => {
-        showCardDetail(card);
-    });
+            // ★ ここが絶対必要
+            div.addEventListener('click', () => {
+                showCardDetail(card);
+            });
 
-    cardsEl.appendChild(div);
-});
+            cardsEl.appendChild(div);
+        });
 
-  // ★ 右下の「このデッキで作る」ボタン
-  makeBtn.onclick = () => {
-    window.location.href = deck.url;
-  };
-  overlay.classList.remove('hidden');
-}
-// ikangetsumaker.js の DOMContentLoaded 内、
-// 最後の }); の直前に追記してください
+        // ★ 右下の「このデッキで作る」ボタン
+        makeBtn.onclick = () => {
+            window.location.href = deck.url;
+        };
+        overlay.classList.remove('hidden');
+    }
+    // ikangetsumaker.js の DOMContentLoaded 内、
+    // 最後の }); の直前に追記してください
     // ✖ボタンで閉じる（closeBtn を使う） ← 修正ポイント②
     closeBtn.addEventListener('click', () => {
 
@@ -1398,7 +1465,7 @@ deck.cards.forEach(no => {
             removeFromDeck(deckItem, id);
         }
     });
-// 🔼 ここまで追加
+    // 🔼 ここまで追加
     // 最初にすべてのカードを表示
     displayCards();
     // 🔽 URL からデッキを読み込む
@@ -1451,19 +1518,20 @@ deck.cards.forEach(no => {
         }
         renderTemplateDecks(list);
     }
-function renderTemplateDecks(list) {
-  const container = document.getElementById("template-list");
-  container.innerHTML = "";
+    function renderTemplateDecks(list) {
+        const container = document.getElementById("template-list");
+        container.innerHTML = "";
 
-  list.forEach(deck => {
-    const div = document.createElement("div");
-    div.classList.add("template-card");
+        list.forEach(deck => {
+            const div = document.createElement("div");
+            div.classList.add("template-card");
 
-    const card1 = cards.find(c => c.NO === deck.cards[0]);
-    const card2 = cards.find(c => c.NO === deck.cards[1]);
-    const card3 = cards.find(c => c.NO === deck.cards[2]);
+            const [n, m, h] = deck.keycards;
+            const card1 = cards.find(c => c.NO === n);
+            const card2 = cards.find(c => c.NO === m);
+            const card3 = cards.find(c => c.NO === h);
 
-    div.innerHTML = `
+            div.innerHTML = `
     <div class="template-fan">
     <img src="${card1.image}" class="fan-left">
     <img src="${card2.image}" class="fan-center">
@@ -1473,49 +1541,49 @@ function renderTemplateDecks(list) {
     <div class="template-year">${deck.year}年</div>
     `;
 
-    div.addEventListener("click", () => {
-        openTemplatePreview(deck);
-    });
-    // ★ クリックでリンクへ飛ぶ
-    container.appendChild(div);
-  });
-}
-
-
-// テンプレートオーバーレイの開閉
-const templateToggle  = document.getElementById('template-toggle');
-const templateOverlay = document.getElementById('template-overlay');
-const templateClose   = document.getElementById('template-close');
-const templatePreviewOverlay = document.getElementById('template-preview-overlay');
-const templatePreviewClose   = document.getElementById('template-preview-close');
-
-if (templatePreviewOverlay && templatePreviewClose) {
-  templatePreviewClose.addEventListener('click', () => {
-    templatePreviewOverlay.classList.add('hidden');
-  });
-
-  templatePreviewOverlay.addEventListener('click', (e) => {
-    if (e.target === templatePreviewOverlay) {
-      templatePreviewOverlay.classList.add('hidden');
+            div.addEventListener("click", () => {
+                openTemplatePreview(deck);
+            });
+            // ★ クリックでリンクへ飛ぶ
+            container.appendChild(div);
+        });
     }
-  });
-}
-if (templateToggle && templateOverlay && templateClose) {
-    // ボタンで開く
-    templateToggle.addEventListener('click', () => {
-        templateOverlay.classList.remove('hidden');
-        displayTemplateDecks(); // ← これを追加
-    });
-    // ✕ボタンで閉じる
-    templateClose.addEventListener('click', () => {
-        templateOverlay.classList.add('hidden');
-    });
-    // 背景クリックで閉じる
-    templateOverlay.addEventListener('click', (e) => {
-        if (e.target === templateOverlay) {
+
+
+    // テンプレートオーバーレイの開閉
+    const templateToggle = document.getElementById('template-toggle');
+    const templateOverlay = document.getElementById('template-overlay');
+    const templateClose = document.getElementById('template-close');
+    const templatePreviewOverlay = document.getElementById('template-preview-overlay');
+    const templatePreviewClose = document.getElementById('template-preview-close');
+
+    if (templatePreviewOverlay && templatePreviewClose) {
+        templatePreviewClose.addEventListener('click', () => {
+            templatePreviewOverlay.classList.add('hidden');
+        });
+
+        templatePreviewOverlay.addEventListener('click', (e) => {
+            if (e.target === templatePreviewOverlay) {
+                templatePreviewOverlay.classList.add('hidden');
+            }
+        });
+    }
+    if (templateToggle && templateOverlay && templateClose) {
+        // ボタンで開く
+        templateToggle.addEventListener('click', () => {
+            templateOverlay.classList.remove('hidden');
+            displayTemplateDecks(); // ← これを追加
+        });
+        // ✕ボタンで閉じる
+        templateClose.addEventListener('click', () => {
             templateOverlay.classList.add('hidden');
-        }
-    });
-}
+        });
+        // 背景クリックで閉じる
+        templateOverlay.addEventListener('click', (e) => {
+            if (e.target === templateOverlay) {
+                templateOverlay.classList.add('hidden');
+            }
+        });
+    }
 
 });
