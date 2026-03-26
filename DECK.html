@@ -50,20 +50,32 @@
 <!-- テンプレートプレビュー用オーバーレイ -->
 <div id="template-preview-overlay" class="overlay hidden">
   <div class="template-preview-panel">
+
     <div class="template-preview-header">
       <span id="template-preview-name"></span>
       <span id="template-preview-year"></span>
       <button id="template-preview-close">✕</button>
     </div>
 
-    <div id="template-preview-cards" class="template-preview-cards"></div>
+    <!-- ★ 横並びにするためのラッパー -->
+    <div class="template-preview-body">
 
-    <div class="template-preview-footer">
-      <button id="template-preview-make-btn">このデッキで作る</button>
+      <!-- 左側：カード一覧＋ボタン -->
+      <div class="template-preview-left">
+        <div id="template-preview-cards" class="template-preview-cards"></div>
+
+        <div class="template-preview-footer">
+          <button id="template-preview-make-btn">このデッキで作る</button>
+        </div>
+      </div>
+
+      <!-- 右側：説明文 -->
+      <div id="template-preview-description" class="template-description"></div>
+
     </div>
+
   </div>
 </div>
-
     <div id="template-list">
     </div>
   </div>
