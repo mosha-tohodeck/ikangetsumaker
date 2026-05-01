@@ -366,8 +366,7 @@ img {
     font-size: 20px !important;
     margin: 4px 0 !important;
   }
-    /* レイアウトを縦並びに */
-  #deck-builder {
+    #deck-builder {
     display: flex;
     flex-direction: column;
   }
@@ -429,17 +428,11 @@ img {
     gap: 1px !important; /* ← カード間隔をほぼゼロに */
     padding: 0px !important; /* ← 枠の余白も少しだけ縮める */
   }
+  
 
-  /* デッキ内カード画像 */
-  .deck-list img {
-    width: 48px !important;   /* ← 今より少し大きめに調整 */
-    height: 60px !important;
-  }
 }
 
 
-/* スマホ縦：カードリストを横スクロールにする */
-/* スマホ縦：デッキ上 / カード下 ＋ 横スクロール ＋ カード小型化 */
 
 /* style.css の末尾に追記してください */
 
