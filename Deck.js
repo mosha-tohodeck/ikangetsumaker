@@ -1204,9 +1204,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // カード本体タップ → デッキに追加（スマホ）
             cardItem.addEventListener('click', function (event) {
-                if (isMobile) {
-                    addToDeck(card);
-                }
+                addToDeck(card);
             });
 
             cardList.appendChild(cardItem);
