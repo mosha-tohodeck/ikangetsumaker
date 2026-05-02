@@ -337,10 +337,12 @@
             <button id="share-deck">デッキ保存・共有</button>
         </div>
     </div>
-    <div id="load-dialog" class="hidden">
-        <p>前に作っていたデッキがあります。以前の内容で続けますか？</p>
-        <button id="load-yes">はい</button>
-        <button id="load-no">いいえ</button>
+    <div id="load-overlay" class="hidden">
+        <div id="load-dialog">
+            <p>前に作っていたデッキがあります。以前の内容で続けますか？</p>
+            <button id="load-yes">はい</button>
+            <button id="load-no">いいえ</button>
+        </div>
     </div>
 
     <div id="card-detail-overlay" class="hidden">
@@ -401,7 +403,7 @@
         </div>
     </div>
 
-    <script src="Deck.js"></script>
+    <script src="ikangetsumaker.js"></script>
 </body>
 
 </html>
