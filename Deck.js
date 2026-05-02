@@ -1497,24 +1497,35 @@ document.addEventListener('DOMContentLoaded', function () {
         });
         rebuildDeckFromCards();
     }
-    // 🔽 ページ読み込み時に保存デッキがあるか確認
-    const saved = localStorage.getItem("savedDeck");
-    if (saved && !deckParam) {
-        document.getElementById("load-dialog").classList.remove("hidden");
-    }
-    document.getElementById("load-yes").addEventListener("click", () => {
-        const data = JSON.parse(saved);
-        for (let id in data) {
-            deckCards[id] = data[id];
+    // 🔽 ページ読み込み時に保存デッキがあるか確認（オーバーレイ表示）
+    window.addEventListener("load", () => {
+        const saved = localStorage.getItem("savedDeck");
+
+        // deckParam がある場合（URLでデッキ読み込み）は表示しない
+        if (saved && !deckParam) {
+            document.getElementById("load-overlay").classList.remove("hidden");
         }
-        rebuildDeckFromCards();
-        document.getElementById("load-dialog").classList.add("hidden");
     });
+
+    // 🔽 「はい」→ デッキ復元
+    document.getElementById("load-yes").addEventListener("click", () => {
+        const saved = localStorage.getItem("savedDeck");
+        if (saved) {
+            const data = JSON.parse(saved);
+            for (let id in data) {
+                deckCards[id] = data[id];
+            }
+            rebuildDeckFromCards();
+        }
+        document.getElementById("load-overlay").classList.add("hidden");
+    });
+
+    // 🔽 「いいえ」→ savedDeck を削除して閉じる
     document.getElementById("load-no").addEventListener("click", () => {
         localStorage.removeItem("savedDeck");
-        document.getElementById("load-dialog").classList.add("hidden");
+        document.getElementById("load-overlay").classList.add("hidden");
     });
-    //ここまで追加。
+
     // ★ テンプレートソートのイベントリスナー
     document.getElementById("sort-year").addEventListener("change", displayTemplateDecks);
     document.getElementById("sort-race").addEventListener("change", displayTemplateDecks);
@@ -1604,6 +1615,8 @@ document.addEventListener('DOMContentLoaded', function () {
     // ===============================
     // ここまでがあなたの既存の JS
     // ===============================
+
+
 
 
     function isMobile() {
