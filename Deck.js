@@ -1606,55 +1606,6 @@ document.addEventListener('DOMContentLoaded', function () {
     // ===============================
 
 
-    // ===============================
-    // ★ スマホ専用ドラッグ処理（必ず一番下に置く）
-    // ===============================
-
-    let draggingCard = null;
-    let startY = 0;
-
-    document.querySelectorAll('.card').forEach(card => {
-
-        card.addEventListener('touchstart', e => {
-            if (!isMobile()) return;
-
-            e.preventDefault(); // ← 長押しメニューを完全に無効化
-            draggingCard = card;
-            startY = e.touches[0].clientY;
-
-            card.style.transition = 'none';
-            card.style.position = 'absolute';
-            card.style.zIndex = 9999;
-        });
-
-        card.addEventListener('touchmove', e => {
-            if (!draggingCard) return;
-
-            const y = e.touches[0].clientY;
-            const dy = y - startY;
-
-            if (dy > 0) {
-                draggingCard.style.transform = `translateY(${dy}px)`;
-            }
-        });
-
-        card.addEventListener('touchend', e => {
-            if (!draggingCard) return;
-
-            const endY = e.changedTouches[0].clientY;
-            const deckRect = document.querySelector('#deck-list').getBoundingClientRect();
-
-            if (endY > deckRect.top) {
-                addCardToDeck(draggingCard.dataset.cardId);
-            }
-
-            draggingCard.style.transform = '';
-            draggingCard.style.position = '';
-            draggingCard.style.zIndex = '';
-            draggingCard = null;
-        });
-    });
-
     function isMobile() {
         return window.innerWidth <= 767;
     }
