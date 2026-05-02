@@ -111,7 +111,7 @@ button:hover {
 
 /* デッキリストをドロップ可能領域として可視化 */
 #deck-list {
-  min-height: 200px;
+  min-height: 360px;
   background-color: rgba(0, 0, 255, 0.08);
   border: 2px dashed #444;
   padding: 10px;
@@ -431,10 +431,38 @@ img {
   }
 
   #deck-list {
+    min-height: 320px;
+    max-height: 320px;
     gap: 1px !important;
     /* ← カード間隔をほぼゼロに */
     padding: 0px !important;
     /* ← 枠の余白も少しだけ縮める */
+  }
+
+  .template-preview-body {
+    display: flex;
+    flex-direction: column;
+    /* ← 縦並びにする */
+    gap: 12px;
+  }
+
+  .template-description {
+    order: 3;
+    /* ← 説明欄を一番下に移動 */
+    width: 100%;
+    max-height: none;
+  }
+
+  .template-preview-left {
+    order: 1;
+    width: 100%;
+  }
+
+  #template-preview-make-btn {
+    order: 2;
+    /* ← ボタンを説明欄より上に */
+    width: 100%;
+    margin-bottom: 10px;
   }
 
 
@@ -697,4 +725,30 @@ img {
     justify-content: space-between;
     align-items: center;
   }
+}
+
+#load-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999; /* 他のオーバーレイより前 */
+}
+
+#load-overlay.hidden {
+    display: none;
+}
+
+#load-dialog {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 320px;
+    text-align: center;
 }
