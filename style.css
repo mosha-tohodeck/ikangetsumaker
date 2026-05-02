@@ -177,6 +177,7 @@ button:hover {
   backdrop-filter: blur(4px);
 
   transition: 0.2s ease;
+  position: relative;
 }
 
 /* ホバー時の演出 */
@@ -344,10 +345,12 @@ img {
     flex-direction: column;
     /* ← 縦並びにする */
   }
+
   #deck-builder {
     flex-direction: column !important;
     width: 100%;
   }
+
   #deck {
     order: 1;
     /* ← デッキを上に */
@@ -362,11 +365,13 @@ img {
     float: none;
     height: auto;
   }
+
   .page-title {
     font-size: 20px !important;
     margin: 4px 0 !important;
   }
-    #deck-builder {
+
+  #deck-builder {
     display: flex;
     flex-direction: column;
   }
@@ -424,11 +429,14 @@ img {
   .detail-button {
     display: none !important;
   }
+
   #deck-list {
-    gap: 1px !important; /* ← カード間隔をほぼゼロに */
-    padding: 0px !important; /* ← 枠の余白も少しだけ縮める */
+    gap: 1px !important;
+    /* ← カード間隔をほぼゼロに */
+    padding: 0px !important;
+    /* ← 枠の余白も少しだけ縮める */
   }
-  
+
 
 }
 
@@ -625,4 +633,68 @@ img {
   border-radius: 8px;
   color: #fff;
   line-height: 1.5;
+}
+
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  /* ← 左右に配置 */
+  align-items: center;
+  /* ← 縦位置を揃える */
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.card-detail-btn {
+  position: absolute;
+  right: 4px;
+  bottom: 4px;
+  background: rgba(0, 0, 0, 0.4);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 2px 6px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* 全体：左にメニュー、右に2段 */
+.top-row {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 20px;
+  width: 100%;
+}
+
+/* 右側の2段を縦並びにする */
+.right-column {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* ラベルと入力欄を横並びにする */
+.name-box,
+.pack-box {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: nowrap;
+}
+
+/* PC のときだけ横並びにする */
+@media only screen and (max-width: 768px) {
+  .right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .top-row {
+    flex-direction: row;
+    /* ← PC では横並び */
+    justify-content: space-between;
+    align-items: center;
+  }
 }
