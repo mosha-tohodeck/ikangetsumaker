@@ -116,6 +116,8 @@ button:hover {
   border: 2px dashed #444;
   padding: 10px;
   margin-top: 20px;
+  margin-bottom: 60px;
+  /* ← ボタンの高さぶん余白 */
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 6px;
@@ -132,16 +134,17 @@ button:hover {
 
 #share-deck {
   position: absolute;
-  right: 10px;
+  right: 0;
   bottom: 10px;
+  /* ← 枠の外に出す高さ */
   background-color: #3498db;
   color: #fff;
   padding: 8px 14px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  z-index: 10;
 }
+
 
 .menu-container {
   position: relative;
@@ -349,6 +352,7 @@ img {
   #deck-builder {
     flex-direction: column !important;
     width: 100%;
+    position: relative;
   }
 
   #deck {
@@ -431,8 +435,8 @@ img {
   }
 
   #deck-list {
-    min-height: 320px;
-    max-height: 320px;
+    min-height: 360px;
+    max-height: 360px;
     gap: 1px !important;
     /* ← カード間隔をほぼゼロに */
     padding: 0px !important;
@@ -464,6 +468,7 @@ img {
     width: 100%;
     margin-bottom: 10px;
   }
+
 
 
 }
@@ -728,27 +733,28 @@ img {
 }
 
 #load-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.6);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 99999; /* 他のオーバーレイより前 */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+  /* 他のオーバーレイより前 */
 }
 
 #load-overlay.hidden {
-    display: none;
+  display: none;
 }
 
 #load-dialog {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    width: 80%;
-    max-width: 320px;
-    text-align: center;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 320px;
+  text-align: center;
 }
