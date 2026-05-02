@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const searchMenu = document.getElementById('search-menu');
     const packSelect = document.getElementById('packSelect');
 
+
     const cards = [
         { NO: 1, id: 1, title: '①ルーミア', image: '1ルーミア エラッタWIKI.jpg', category: '《常闇の妖怪》ルーミア,《常闇の妖怪》るーみあ,そーなのかー,夜符「ナイトバード」', into: '紅魔郷', ability: '攻撃スペル', effect: '手札から守護札を出す', race: '妖怪', condition: '', wikiLink: 'https://touhouikangetsu.wiki.fc2.com/wiki/%E3%80%8E%E2%91%A0%E3%80%8A%E5%AE%B5%E9%97%87%E3%81%AE%E5%A6%96%E6%80%AA%E3%80%8B%E3%83%AB%E3%83%BC%E3%83%9F%E3%82%A2%E3%80%8F', },
         { NO: 2, id: 2, title: '②大妖精', image: '2大妖精WIKI.jpg', category: '《ルーネイトエルフ》大妖精,《ルーネイトエルフ》だいようせい,大ちゃん,大ようせい', into: '紅魔郷', ability: 'スペルなし', effect: '', race: '妖精', condition: '', wikiLink: 'https://touhouikangetsu.wiki.fc2.com/wiki/%E3%80%8E%E2%91%A1%E3%80%8A%E3%83%AB%E3%83%BC%E3%83%8D%E3%82%A4%E3%83%88%E3%82%A8%E3%83%AB%E3%83%95%E3%80%8B%E5%A4%A7%E5%A6%96%E7%B2%BE%E3%80%8F' },
@@ -1031,7 +1032,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const deckCards = Array(12);
     function addToDeckDOM(card) {
         const deckItem = document.createElement('li');
-        // 🔥 これを追加
         deckItem.dataset.id = card.id;
 
         const cardImageInDeck = document.createElement('img');
@@ -1039,18 +1039,32 @@ document.addEventListener('DOMContentLoaded', function () {
         cardImageInDeck.alt = card.title;
         deckItem.appendChild(cardImageInDeck);
 
-        //showCardDetailでクリック時にメニュー追加。
-        deckItem.addEventListener('click', function () {
-            showCardDetail(card);
-        });
-        //2.deckItemにドラッグ機能を追加①
-        deckItem.setAttribute('draggable', 'true');
-        deckItem.addEventListener('dragstart', function (event) {
-            event.dataTransfer.setData('text/plain', card.id);
-        });
+        const isMobile = window.matchMedia("(max-width: 767px)").matches;
+
+        // 🔥 スマホ：タップで removeFromDeck
+        if (isMobile) {
+            deckItem.addEventListener('click', function (event) {
+                event.stopPropagation();
+                removeFromDeck(deckItem, card.id);
+            });
+        }
+
+        // 🔥 PC：タップで詳細メニュー
+        else {
+            deckItem.addEventListener('click', function () {
+                showCardDetail(card);
+            });
+
+            // PC用ドラッグ
+            deckItem.setAttribute('draggable', 'true');
+            deckItem.addEventListener('dragstart', function (event) {
+                event.dataTransfer.setData('text/plain', card.id);
+            });
+        }
 
         deckList.appendChild(deckItem);
     }
+
 
     function addToDeck(card) {
         if (!deckCards[card.id]) {
@@ -1115,8 +1129,9 @@ document.addEventListener('DOMContentLoaded', function () {
         const selectedRace = raceSearch.value.toLowerCase();
         const selectedCondition = conditionSearch.value.toLowerCase();
         const selectedId = idSearch.value.toLowerCase();
-        const selectedPack = packSelect.value.toLowerCase(); // 追加: パックの選択値
+        const selectedPack = packSelect.value.toLowerCase();
         const selectedTeam = teamSearch.value.toLowerCase();
+
         const filteredCards = cards.filter(function (card) {
             const effectArray = Array.isArray(card.effect) ? card.effect : [card.effect];
             const conditionArray = Array.isArray(card.condition) ? card.condition : [card.condition];
@@ -1131,49 +1146,41 @@ document.addEventListener('DOMContentLoaded', function () {
             return (
                 card.category.toLowerCase().includes(keyword) &&
                 (selectedAbility === '' || card.ability.toLowerCase() === selectedAbility) &&
-                (
-                    selectedEffect === '' ||
-                    effectArray.some(function (e) {
-                        return e.toLowerCase() === selectedEffect;
-                    })
-                ) &&
+                (selectedEffect === '' || effectArray.some(e => e.toLowerCase() === selectedEffect)) &&
                 (selectedRace === '' || card.race.toLowerCase() === selectedRace) &&
-                (
-                    selectedCondition === '' ||
-                    conditionArray.some(checkCondition)
-                ) &&
+                (selectedCondition === '' || conditionArray.some(checkCondition)) &&
                 (selectedId === '' || card.id.toString() === selectedId) &&
                 (selectedPack === '' || card.into.toLowerCase() === selectedPack) &&
                 (selectedTeam === '' || card.team.toLowerCase() === selectedTeam)
-                // 追加: パックの条件
             );
         });
 
-
         filteredCards.forEach(function (card) {
-                const isMobile = window.matchMedia("(max-width: 767px)").matches;
+            const isMobile = window.matchMedia("(max-width: 767px)").matches;
             const cardItem = document.createElement('div');
             cardItem.className = 'card';
+            cardItem.dataset.cardId = card.id;
 
-            //1.CardItemにドラッグ機能を追加。①
+            // PC用ドラッグ
             cardItem.setAttribute('draggable', 'true');
             cardItem.addEventListener('dragstart', function (event) {
-                console.log("dragstart:", card.NO);
                 event.dataTransfer.setData('text/plain', card.NO);
             });
 
+            // 画像
             const cardImage = document.createElement('img');
             cardImage.src = card.image;
             cardImage.alt = card.title;
             cardItem.appendChild(cardImage);
-            // 3. タイトル（スマホでは非表示 → 追加しない）
+
+            // PCのみタイトル表示
             if (!isMobile) {
                 const cardTitle = document.createElement('p');
                 cardTitle.textContent = card.title;
                 cardItem.appendChild(cardTitle);
             }
 
-            // 4. 詳細ボタン（スマホでは非表示 → 追加しない）
+            // PCのみ詳細ボタン
             if (!isMobile) {
                 const wikiButton = document.createElement('button');
                 wikiButton.textContent = '詳細';
@@ -1184,24 +1191,29 @@ document.addEventListener('DOMContentLoaded', function () {
                 cardItem.appendChild(wikiButton);
             }
 
-            cardItem.addEventListener('click', function (event) {
-
-                const isMobile = window.matchMedia("(max-width: 767px)").matches;
-
-                if (isMobile) {
-                    // スマホ → 詳細メニューを開く
+            // 🔍 スマホ専用の詳細ボタン
+            if (isMobile) {
+                const detailBtn = document.createElement('button');
+                detailBtn.className = 'card-detail-btn';
+                detailBtn.textContent = '🔍';
+                detailBtn.addEventListener('click', function (event) {
+                    event.stopPropagation(); // addToDeck を防ぐ
                     showCardDetail(card);
-                } else {
-                    // PC → デッキに追加
+                });
+                cardItem.appendChild(detailBtn);
+            }
+
+            // カード本体タップ → デッキに追加（スマホ）
+            cardItem.addEventListener('click', function (event) {
+                if (isMobile) {
                     addToDeck(card);
                 }
-
-                event.stopPropagation();
             });
 
             cardList.appendChild(cardItem);
         });
     }
+
 
     const overlay = document.getElementById('card-detail-overlay');
     const img = document.getElementById('detail-image');
@@ -1589,5 +1601,63 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     }
+    // ===============================
+    // ここまでがあなたの既存の JS
+    // ===============================
+
+
+    // ===============================
+    // ★ スマホ専用ドラッグ処理（必ず一番下に置く）
+    // ===============================
+
+    let draggingCard = null;
+    let startY = 0;
+
+    document.querySelectorAll('.card').forEach(card => {
+
+        card.addEventListener('touchstart', e => {
+            if (!isMobile()) return;
+
+            e.preventDefault(); // ← 長押しメニューを完全に無効化
+            draggingCard = card;
+            startY = e.touches[0].clientY;
+
+            card.style.transition = 'none';
+            card.style.position = 'absolute';
+            card.style.zIndex = 9999;
+        });
+
+        card.addEventListener('touchmove', e => {
+            if (!draggingCard) return;
+
+            const y = e.touches[0].clientY;
+            const dy = y - startY;
+
+            if (dy > 0) {
+                draggingCard.style.transform = `translateY(${dy}px)`;
+            }
+        });
+
+        card.addEventListener('touchend', e => {
+            if (!draggingCard) return;
+
+            const endY = e.changedTouches[0].clientY;
+            const deckRect = document.querySelector('#deck-list').getBoundingClientRect();
+
+            if (endY > deckRect.top) {
+                addCardToDeck(draggingCard.dataset.cardId);
+            }
+
+            draggingCard.style.transform = '';
+            draggingCard.style.position = '';
+            draggingCard.style.zIndex = '';
+            draggingCard = null;
+        });
+    });
+
+    function isMobile() {
+        return window.innerWidth <= 767;
+    }
+
 
 });
